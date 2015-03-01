@@ -26,7 +26,7 @@ function handleExecResponse(method, pinNumber, callback) {
 }
 
 function sanitizePinNumber(pinNumber) {
-	if(!isNumber(pinNumber) || parseInt(pinNumber, 10) > 125)) {//
+	if(!isNumber(pinNumber) || parseInt(pinNumber, 10) > 125) {
 		throw new Error("Pin number isn't valid");
 	}
 
@@ -91,7 +91,7 @@ var gpio = {
 		pinNumber = sanitizePinNumber(pinNumber);
 		callback = callback || noop;
 
-		fs.readFile(sysFsPath + "/gpio" + pinMapping[pinNumber] + "/direction", "utf8", function(err, direction) {
+		fs.readFile(sysFsPath + "/gpio" + pinNumber + "/direction", "utf8", function(err, direction) {
 			if(err) return callback(err);
 			callback(null, sanitizeDirection(direction.trim()));
 		});
@@ -106,7 +106,7 @@ var gpio = {
 	read: function(pinNumber, callback) {
 		pinNumber = sanitizePinNumber(pinNumber);
 
-		fs.readFile(sysFsPath + "/gpio" + pinMapping[pinNumber] + "/value", function(err, data) {
+		fs.readFile(sysFsPath + "/gpio" + pinNumber + "/value", function(err, data) {
 			if(err) return (callback || noop)(err);
 
 			(callback || noop)(null, parseInt(data, 10));
@@ -118,7 +118,7 @@ var gpio = {
 
 		value = !!value?"1":"0";
 
-		fs.writeFile(sysFsPath + "/gpio" + pinMapping[pinNumber] + "/value", value, "utf8", callback);
+		fs.writeFile(sysFsPath + "/gpio" + pinNumber + "/value", value, "utf8", callback);
 	}
 };
 
