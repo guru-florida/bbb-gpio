@@ -11,5 +11,10 @@
     "gpio",
     "bbb"
   ],
-  "man": "./Readme.md"
+  "man": "./Readme.md",
+  "repository": {
+      "type": "git",
+      "url": "http://github.com/oakfire/bbb-gpio.git"
+  }
+
 }
