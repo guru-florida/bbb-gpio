@@ -1,14 +1,15 @@
 {
   "name": "bbb-gpio",
   "version": "0.0.2",
-  "description": "A simple GPIO helper for the Beaglebone-black",
+  "description": "A simple GPIO helper for the Beaglebone-black. Changed from pi-gpio",
   "author": {
     "name": "yongjiu.wei",
     "email": "oakwatcher@gmail.com"
   },
   "main": "./bbb-gpio",
-  "tags": [
+  "keywords": [
     "gpio",
     "bbb"
-  ]
+  ],
+  "man": "./Readme.md"
 }
