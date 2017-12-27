@@ -1,6 +1,6 @@
 {
   "name": "bbb-gpio",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A simple GPIO helper for the Beaglebone-black. Changed from pi-gpio",
   "author": {
     "name": "yongjiu.wei",
