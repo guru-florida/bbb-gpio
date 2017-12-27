@@ -118,6 +118,12 @@ var gpio = {
         value = !!value?"1":"0";
 
         fs.writeFile(sysFsPath + "/gpio" + pinNumber + "/value", value, "utf8", callback);
+    },
+
+    isopen: function(pinNumber, callback) {
+        pinNumber = sanitizePinNumber(pinNumber);
+
+        fs.stat(sysFsPath + "/gpio" + pinNumber + "/value", callback);
     }
 };
 
